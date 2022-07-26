@@ -1,38 +1,92 @@
-.App {
+:root {
+  --clr-primary-1: #a37871;
+  --clr-primary-2: #eee5e8;
+  --clr-primary-3: #417b5a;
+  --clr-primary-4: #adf5ff;
+  --clr-primary-5: #8dc5cc;
+  --clr-primary-6: #011627;
+  --clr-primary-7: #000;
+  --clr-white: #fff;
+  --clr-grey: #f8f7f7;
+  --radius: 0.3rem;
+  --spacing: 0.25rem;
+  --transition: all 0.2s linear;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+h3 {
+  text-transform: capitalize;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.inputs {
   display: flex;
-  flex-direction: column;
+  width: 80vw;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  background: var(--clr-grey);
+  margin: 2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--clr-primary-2);
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.whole-app {
+  width: 80vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* 
+=======
+input
+=======
+ */
+.input {
+  position: relative;
+  display: flex;
+}
+.input i {
+  position: absolute;
+  left: 25px;
+  top: 50px;
+  text-align: center;
+  justify-content: center;
+  color: var(--clr-primary-1);
+}
+.todo-input {
+  padding: 2rem;
+  width: 70vw;
+  margin: 1rem;
+  border: 1px solid var(--clr-primary-2);
+  background: var(--clr-white);
+  color: var(--clr-primary-1);
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: var(--radius);
+}
+.add-btn {
+  width: 70vw;
+  background: var(--clr-primary-4);
+  color: var(--clr-primary-1);
+  box-shadow: none;
+  border: none;
+  padding: 1rem;
+  margin: 1rem;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: var(--spacing);
+  border-radius: var(--radius);
+}
+.add-btn:hover {
+  font-weight: bold;
+  transition: var(--transition);
+  box-shadow: 1px 1px 4px 0px var(--clr-primary-5);
+}
+.input:hover:focus {
+  border: var(--clr-primary-1);
 }
