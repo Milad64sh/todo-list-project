@@ -9,11 +9,28 @@ export default class App extends Component {
     items: [],
     item: '',
     id: uuidv4(),
-    editInfo: false,
+    editItem: false,
   };
-  handleChange = (e) => {};
+  handleChange = (e) => {
+    this.setState({
+      item: e.target.value,
+    });
+  };
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const newItem = {
+      id: this.state.id,
+      title: this.state.item,
+    };
+    const newItems = [...this.state.items, newItem];
+    this.setState({
+      id: uuidv4(),
+      items: newItems,
+      item: '',
+      editItem: false,
+    });
+  };
   handleDelete = (id) => {};
-  handleSubmit = (e) => {};
   handleEdit = (id) => {};
   clearList = () => {};
   render() {

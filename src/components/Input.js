@@ -3,9 +3,12 @@ import '../App.css';
 
 export default class Input extends Component {
   render() {
-    const { handleChange, hnadleSubmit, item } = this.props;
+    const { handleChange, hnadleSubmit, item, editItem } = this.props;
     return (
       <article className='inputs'>
+        <div className='heading'>
+          <h1>ToDo Input</h1>
+        </div>
         <div className='form'>
           <form onSubmit={hnadleSubmit}>
             <div className='input'>
@@ -20,7 +23,7 @@ export default class Input extends Component {
             </div>
 
             <div className='btn'>
-              <button type='button' className='add-btn'>
+              <button type='submit' className='add-btn'>
                 Add
               </button>
             </div>
