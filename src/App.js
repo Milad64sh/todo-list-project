@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import List from './components/List';
 import Input from './components/Input';
-import './App.css';
-
+import List from './components/List';
 export default class App extends Component {
   state = {
     items: [],
@@ -19,35 +17,45 @@ export default class App extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const newItem = {
-      id: this.state.id,
+      id: uuidv4(),
       title: this.state.item,
     };
     const newItems = [...this.state.items, newItem];
     this.setState({
-      id: uuidv4(),
       items: newItems,
       item: '',
+      id: uuidv4(),
       editItem: false,
     });
   };
-  handleDelete = (id) => {};
+  handleDelete = (id) => {
+    const filteredItems = this.state.items.filter((item) => item.id !== id);
+    this.setState({
+      items: filteredItems,
+    });
+  };
   handleEdit = (id) => {};
-  clearList = () => {};
+  clearList = () => {
+    this.setState({
+      items: [],
+    });
+  };
   render() {
     return (
-      <section className='whole-app'>
+      <>
         <Input
-          handleChange={this.handleChange}
-          handlesubmit={this.handleSubmit}
-          handleEdit={this.handleEdit}
           item={this.state.item}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+          editItem={this.editItem}
         />
         <List
-          clearList={this.clearList}
+          items={this.state.items}
+          handleEdit={this.handleEdit}
           handleDelete={this.handleDelete}
-          item={this.state.items}
+          clearList={this.clearList}
         />
-      </section>
+      </>
     );
   }
 }

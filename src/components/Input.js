@@ -3,33 +3,34 @@ import '../App.css';
 
 export default class Input extends Component {
   render() {
-    const { handleChange, hnadleSubmit, item, editItem } = this.props;
+    const { item, handleChange, handleSubmit, editItem } = this.props;
     return (
-      <article className='inputs'>
-        <div className='heading'>
-          <h1>ToDo Input</h1>
-        </div>
-        <div className='form'>
-          <form onSubmit={hnadleSubmit}>
-            <div className='input'>
-              <input
-                className='todo-input'
-                type='text'
-                placeholder='... add todo item here'
-                value={item}
-                onChange={handleChange}
-              />
-              <i className='fas fa-book'></i>
-            </div>
-
-            <div className='btn'>
-              <button type='submit' className='add-btn'>
-                Add
-              </button>
-            </div>
-          </form>
-        </div>
-      </article>
+      <fieldset>
+        <legend>
+          <h1>todo input</h1>
+        </legend>
+        <form onSubmit={handleSubmit}>
+          <label className='todo label'>your todo item: </label>
+          <div className='input'>
+            <i className='fas fa-book'></i>
+            <input
+              type='text'
+              placeholder='...add todo item here'
+              value={item}
+              onChange={handleChange}
+            />
+          </div>
+          {/* <div className='checkbox'>
+            <input type='checkbox' />
+            <label className='checks label'>done</label>
+            <input type='checkbox' />
+            <label className='checks label'>undone</label>
+          </div> */}
+          <button className='btn add-btn' type='submit'>
+            add
+          </button>
+        </form>
+      </fieldset>
     );
   }
 }
