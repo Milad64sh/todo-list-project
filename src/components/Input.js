@@ -20,13 +20,8 @@ export default class Input extends Component {
               onChange={handleChange}
             />
           </div>
-          {/* <div className='checkbox'>
-            <input type='checkbox' />
-            <label className='checks label'>done</label>
-            <input type='checkbox' />
-            <label className='checks label'>undone</label>
-          </div> */}
           <button
+            disabled={item ? false : true}
             className={editItem ? 'btn edit-btn' : 'btn add-btn'}
             type='submit'
           >

@@ -53,6 +53,7 @@ fieldset {
   border-radius: var(--radius);
   border: solid 2px var(--clr-primary-3);
   width: 70vw;
+  max-width: 992px;
 }
 legend {
   padding: 0.25rem;
@@ -65,12 +66,11 @@ label {
   display: block;
   margin-top: 1rem;
 }
-.checks label {
-  margin-top: 0;
-}
+
 label:first-of-type {
   margin-top: 0;
 }
+
 input {
   padding: 1rem;
   border: solid 2px var(--clr-primary-3);
@@ -80,6 +80,7 @@ input {
   text-align: center;
   color: var(--clr-primary-1);
 }
+
 .input i {
   position: absolute;
   color: var(--clr-primary-1);
@@ -156,4 +157,10 @@ i:hover {
 }
 .add-btn:hover {
   box-shadow: 1px 1px 8px 1px var(--clr-primary-5);
+}
+@media screen and (min-width: 992px) {
+  .app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }

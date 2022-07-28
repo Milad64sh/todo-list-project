@@ -53,18 +53,24 @@ export default class App extends Component {
   render() {
     return (
       <>
-        <Input
-          item={this.state.item}
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-          editItem={this.state.editItem}
-        />
-        <List
-          items={this.state.items}
-          handleEdit={this.handleEdit}
-          handleDelete={this.handleDelete}
-          clearList={this.clearList}
-        />
+        <section className='app'>
+          <div className='input'>
+            <Input
+              item={this.state.item}
+              handleChange={this.handleChange}
+              handleSubmit={this.handleSubmit}
+              editItem={this.state.editItem}
+            />
+          </div>
+          <div className='list'>
+            <List
+              items={this.state.items}
+              handleEdit={this.handleEdit}
+              handleDelete={this.handleDelete}
+              clearList={this.clearList}
+            />
+          </div>
+        </section>
       </>
     );
   }
