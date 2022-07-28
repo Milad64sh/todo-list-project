@@ -26,8 +26,11 @@ export default class Input extends Component {
             <input type='checkbox' />
             <label className='checks label'>undone</label>
           </div> */}
-          <button className='btn add-btn' type='submit'>
-            add
+          <button
+            className={editItem ? 'btn edit-btn' : 'btn add-btn'}
+            type='submit'
+          >
+            {editItem ? 'Edit' : 'add'}
           </button>
         </form>
       </fieldset>

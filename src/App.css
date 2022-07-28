@@ -83,7 +83,7 @@ input {
 .input i {
   position: absolute;
   color: var(--clr-primary-1);
-  padding: 30px;
+  padding: 33px;
   /* min-width: 0px; */
 }
 .add-btn {
@@ -92,6 +92,16 @@ input {
   margin: 1rem auto;
   background: var(--clr-primary-4);
   color: var(--clr-primary-6);
+  border-radius: var(--radius);
+  text-transform: uppercase;
+  letter-spacing: var(--spacing);
+}
+.btn.edit-btn {
+  padding: 1rem;
+  width: 70vw;
+  margin: 1rem auto;
+  background: var(--clr-primary-3);
+  color: var(--clr-white);
   border-radius: var(--radius);
   text-transform: uppercase;
   letter-spacing: var(--spacing);
